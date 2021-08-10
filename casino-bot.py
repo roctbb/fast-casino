@@ -32,11 +32,11 @@ def run_game(message):
         bot.send_message(message.chat.id, "Офигенная тема! 20x!!!")
         print(send_money(message.chat.id, bets[message.chat.id] * 20, "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
-    elif old_option == '🍑🍑🍑':
+    elif old_option == '️🍑️🍑️🍑':
         bot.send_message(message.chat.id, "10x!!!")
         print(send_money(message.chat.id, bets[message.chat.id] * 10, "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
-    elif old_option == '❤️❤️❤️':
+    elif old_option == '❤️❤️❤️️':
         bot.send_message(message.chat.id, "5x!!!")
         print(send_money(message.chat.id, bets[message.chat.id] * 5, "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
