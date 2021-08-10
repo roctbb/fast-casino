@@ -8,7 +8,7 @@ from helpers import generate_keyboard
 from bank_api import ask_money, verify_transaction, send_money
 
 bot = TeleBot(telegram_token)
-options = ['️🍑', '🐷'] # , '❤️'
+options = ['️🍑', '🐷', '❤️'] #
 temp = {}
 bets = {}
 
