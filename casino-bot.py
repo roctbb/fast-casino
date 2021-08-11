@@ -8,13 +8,13 @@ from helpers import generate_keyboard
 from bank_api import ask_money, verify_transaction, send_money
 
 bot = TeleBot(telegram_token)
-options = ['1', '2', '3']  #
+options = ['1', '2', '3', '4', '5']  #
 temp = {}
 bets = {}
 
 
 def recode(option):
-    return option.replace('1', '🐷').replace('2', '️🍑').replace('3', '❤️')
+    return option.replace('1', '🐷').replace('2', '️🍑').replace('3', '❤️').replace('4', '🎱').replace('5', '🍒')
 
 
 def generate_option():
@@ -36,15 +36,23 @@ def run_game(message):
 
     if old_option == '111':
         bot.send_message(message.chat.id, "Офигенная тема! 20x!!!")
-        print(send_money(message.chat.id, bets[message.chat.id] * 20, "Выигрыш в казино."))
+        print(send_money(message.chat.id, int(bets[message.chat.id] * 20 * 0.9), "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
     elif old_option == '222':
         bot.send_message(message.chat.id, "5x!!!")
-        print(send_money(message.chat.id, bets[message.chat.id] * 10, "Выигрыш в казино."))
+        print(send_money(message.chat.id, int(bets[message.chat.id] * 5 * 0.9), "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
     elif old_option == '333':
         bot.send_message(message.chat.id, "3x!!!")
-        print(send_money(message.chat.id, bets[message.chat.id] * 5, "Выигрыш в казино."))
+        print(send_money(message.chat.id, int(bets[message.chat.id] * 3 * 0.9), "Выигрыш в казино."))
+        bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
+    elif old_option == '444':
+        bot.send_message(message.chat.id, "2x!!!")
+        print(send_money(message.chat.id, int(bets[message.chat.id] * 2 * 0.9), "Выигрыш в казино."))
+        bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
+    elif old_option == '555':
+        bot.send_message(message.chat.id, "10x!!!")
+        print(send_money(message.chat.id, int(bets[message.chat.id] * 10 * 0.9), "Выигрыш в казино."))
         bot.send_message(message.chat.id, "Перевели деньги. Еще раз?")
     else:
         bot.send_message(message.chat.id, "В этот раз не судьба. Еще раз?")
